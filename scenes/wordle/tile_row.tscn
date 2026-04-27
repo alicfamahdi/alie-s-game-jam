@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dyi0e088ajkcu"]
+
+[ext_resource type="Theme" uid="uid://c8mvie6xf1ng5" path="res://new_theme.tres" id="1_471jp"]
+[ext_resource type="Script" uid="uid://cv6vwu78vsj8d" path="res://scripts/wordle/tile_row.gd" id="1_sllie"]
+[ext_resource type="Script" uid="uid://bvgketajhv5p7" path="res://scripts/wordle/tile.gd" id="3_frcj2"]
+
+[node name="TileRow" type="GridContainer" unique_id=335293870 node_paths=PackedStringArray("tiles")]
+theme_override_constants/h_separation = 5
+columns = 5
+script = ExtResource("1_sllie")
+tiles = [NodePath("Tile0"), NodePath("Tile1"), NodePath("Tile2"), NodePath("Tile3"), NodePath("Tile4")]
+
+[node name="Tile0" type="Panel" parent="." unique_id=191185299 node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("1_471jp")
+theme_type_variation = &"Tile"
+script = ExtResource("3_frcj2")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Tile0" unique_id=492004971]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+theme = ExtResource("1_471jp")
+theme_type_variation = &"TileLetter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile1" type="Panel" parent="." unique_id=38768106 node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("1_471jp")
+theme_type_variation = &"Tile"
+script = ExtResource("3_frcj2")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Tile1" unique_id=1716372675]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+theme = ExtResource("1_471jp")
+theme_type_variation = &"TileLetter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile2" type="Panel" parent="." unique_id=993104307 node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("1_471jp")
+theme_type_variation = &"Tile"
+script = ExtResource("3_frcj2")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Tile2" unique_id=2109293267]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+theme = ExtResource("1_471jp")
+theme_type_variation = &"TileLetter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile3" type="Panel" parent="." unique_id=2064776346 node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("1_471jp")
+theme_type_variation = &"Tile"
+script = ExtResource("3_frcj2")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Tile3" unique_id=1138961863]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+theme = ExtResource("1_471jp")
+theme_type_variation = &"TileLetter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tile4" type="Panel" parent="." unique_id=1237556838 node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("1_471jp")
+theme_type_variation = &"Tile"
+script = ExtResource("3_frcj2")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Tile4" unique_id=1379609078]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+theme = ExtResource("1_471jp")
+theme_type_variation = &"TileLetter"
+horizontal_alignment = 1
+vertical_alignment = 1

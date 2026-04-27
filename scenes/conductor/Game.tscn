@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://wiotj0n47ece"]
+
+[ext_resource type="Script" uid="uid://d0myvkc583i2m" path="res://scripts/conductor/game.gd" id="1_kr0qb"]
+[ext_resource type="PackedScene" uid="uid://b7aucgpvvw8to" path="res://scenes/conductor/ArrowButton.tscn" id="2_s6yw4"]
+[ext_resource type="Texture2D" uid="uid://di75kb8k3k8hy" path="res://assets/visuals/conductor/arrow_button/arrow-left-idle.png" id="3_iqrqv"]
+[ext_resource type="Texture2D" uid="uid://jmyvat1evh8f" path="res://assets/visuals/conductor/arrow_button/arrow-left-click.png" id="4_hkpug"]
+[ext_resource type="Texture2D" uid="uid://cvuga8s7uqq6p" path="res://assets/visuals/conductor/arrow_button/arrow-right-idle.png" id="5_om3wa"]
+[ext_resource type="Texture2D" uid="uid://hr102vu3grq7" path="res://assets/visuals/conductor/arrow_button/arrow-right-click.png" id="6_8pb3h"]
+[ext_resource type="PackedScene" uid="uid://edry436mfw8t" path="res://scenes/conductor/Conductor.tscn" id="7_om3wa"]
+[ext_resource type="AudioStream" uid="uid://bjc53m0lngmbh" path="res://assets/audios/Tchaikovsky_ Swan Lake, Op. 20, TH.12_ Introduction.ogg" id="8_om3wa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pt67o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iqrqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hkpug")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqem2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_om3wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8pb3h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Game" type="Node2D" unique_id=1970724236]
+script = ExtResource("1_kr0qb")
+
+[node name="ArrowUp" parent="." unique_id=1227759510 instance=ExtResource("2_s6yw4")]
+position = Vector2(480, 382)
+input = "ui_up"
+
+[node name="ArrowLeft" parent="." unique_id=1209506492 instance=ExtResource("2_s6yw4")]
+position = Vector2(240, 382)
+sprite_frames = SubResource("SpriteFrames_pt67o")
+input = "ui_left"
+
+[node name="ArrowRight" parent="." unique_id=301957832 instance=ExtResource("2_s6yw4")]
+position = Vector2(720, 382)
+sprite_frames = SubResource("SpriteFrames_gqem2")
+input = "ui_right"
+
+[node name="Label" type="Label" parent="." unique_id=1855658153]
+text = "0"
+
+[node name="Combo" type="Label" parent="." unique_id=1412463162]
+horizontal_alignment = 1
+
+[node name="Conductor" parent="." unique_id=889647715 instance=ExtResource("7_om3wa")]
+stream = ExtResource("8_om3wa")
+
+[connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
+[connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]

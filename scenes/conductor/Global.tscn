@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dwsyjgio5chcr"]
+
+[ext_resource type="Script" uid="uid://bdq3mhyd8nmgv" path="res://scripts/conductor/global.gd" id="1_37qtt"]
+
+[node name="Global" type="Node2D" unique_id=1609647585]
+script = ExtResource("1_37qtt")

@@ -1,0 +1,53 @@
+[gd_resource type="Theme" format=3 uid="uid://c8mvie6xf1ng5"]
+
+[ext_resource type="FontFile" uid="uid://cbeyqkgoxg757" path="res://assets/fonts/Lustria/Lustria-Regular.ttf" id="1_i7eh4"]
+[ext_resource type="FontFile" uid="uid://bfskavuqucsn4" path="res://assets/fonts/Figtree/static/Figtree-Regular.ttf" id="2_78ylj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aggjg"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.95686275, 0.9019608, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i66g5"]
+bg_color = Color(0.09411765, 0.5058824, 0.30588236, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nft0o"]
+bg_color = Color(1, 0.95686275, 0.9019608, 0.09803922)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkfox"]
+bg_color = Color(0.9019608, 0.5176471, 0.18431373, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[resource]
+default_font = ExtResource("2_78ylj")
+default_font_size = 20
+Tile/base_type = &"Panel"
+Tile/styles/panel = SubResource("StyleBoxFlat_aggjg")
+TileCorrect/base_type = &"Panel"
+TileCorrect/styles/panel = SubResource("StyleBoxFlat_i66g5")
+TileIncorrect/base_type = &"Panel"
+TileIncorrect/styles/panel = SubResource("StyleBoxFlat_nft0o")
+TileLetter/base_type = &"Label"
+TileLetter/colors/font_color = Color(1, 0.95686275, 0.9019608, 1)
+TileLetter/font_sizes/font_size = 32
+TileLetter/fonts/font = ExtResource("1_i7eh4")
+TileSemiCorrect/base_type = &"Panel"
+TileSemiCorrect/styles/panel = SubResource("StyleBoxFlat_nkfox")

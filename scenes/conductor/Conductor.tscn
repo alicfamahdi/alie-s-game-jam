@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://edry436mfw8t"]
+
+[ext_resource type="Script" uid="uid://b028gni2i48l5" path="res://scripts/conductor/conductor.gd" id="1_truxm"]
+
+[node name="Conductor" type="AudioStreamPlayer" unique_id=2016593879]
+script = ExtResource("1_truxm")
+
+[node name="StartTimer" type="Timer" parent="." unique_id=544240312]
+one_shot = true
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

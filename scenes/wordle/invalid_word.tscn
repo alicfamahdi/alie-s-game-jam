@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dvdyixg7op1r8"]
+
+[ext_resource type="FontFile" uid="uid://cbeyqkgoxg757" path="res://assets/fonts/Lustria/Lustria-Regular.ttf" id="1_vd1pl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vd1pl"]
+draw_center = false
+
+[node name="InvalidWord" type="Panel" unique_id=1065851292]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vd1pl")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=2094758169]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -78.0
+offset_right = 270.0
+offset_bottom = -30.0
+grow_vertical = 0
+size_flags_vertical = 8
+color = Color(0.92156863, 0.0627451, 0.32156864, 1)
+
+[node name="NotAWord" type="Label" parent="ColorRect2" unique_id=541645565]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.95686275, 0.9019608, 1)
+theme_override_fonts/font = ExtResource("1_vd1pl")
+text = "I don't think that's a word..."
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://davx4y2dwfglv"]
+
+[ext_resource type="PackedScene" uid="uid://dyi0e088ajkcu" path="res://scenes/tile_row.tscn" id="1_31pkf"]
+[ext_resource type="Script" uid="uid://ctns0lwx178gk" path="res://scripts/wordle.gd" id="1_c1jua"]
+[ext_resource type="Script" uid="uid://pudt7p4iiy0n" path="res://scripts/daily_word.gd" id="3_2o7r0"]
+
+[node name="Wordle" type="MarginContainer" unique_id=2133393770 node_paths=PackedStringArray("tile_rows")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c1jua")
+tile_rows = [NodePath("CenterContainer/VBoxContainer/TileRow0"), NodePath("CenterContainer/VBoxContainer/TileRow1"), NodePath("CenterContainer/VBoxContainer/TileRow2"), NodePath("CenterContainer/VBoxContainer/TileRow3"), NodePath("CenterContainer/VBoxContainer/TileRow4"), NodePath("CenterContainer/VBoxContainer/TileRow5")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1114240348]
+layout_mode = 2
+color = Color(0.13725491, 0.11372549, 0.11764706, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=207402561]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1966299400]
+layout_mode = 2
+
+[node name="TileRow0" parent="CenterContainer/VBoxContainer" unique_id=335293870 instance=ExtResource("1_31pkf")]
+layout_mode = 2
+
+[node name="TileRow1" parent="CenterContainer/VBoxContainer" unique_id=2015642602 instance=ExtResource("1_31pkf")]
+layout_mode = 2
+
+[node name="TileRow2" parent="CenterContainer/VBoxContainer" unique_id=794766976 instance=ExtResource("1_31pkf")]
+layout_mode = 2
+
+[node name="TileRow3" parent="CenterContainer/VBoxContainer" unique_id=143094012 instance=ExtResource("1_31pkf")]
+layout_mode = 2
+
+[node name="TileRow4" parent="CenterContainer/VBoxContainer" unique_id=941135358 instance=ExtResource("1_31pkf")]
+layout_mode = 2
+
+[node name="TileRow5" parent="CenterContainer/VBoxContainer" unique_id=540168278 node_paths=PackedStringArray("tiles") instance=ExtResource("1_31pkf")]
+layout_mode = 2
+tiles = [NodePath("../TileRow0"), NodePath("Tile2"), NodePath("Tile3"), NodePath("Tile4"), null]
+
+[node name="Node" type="Node" parent="." unique_id=2128317164]
+script = ExtResource("3_2o7r0")
+daily_word = "WORLD"
