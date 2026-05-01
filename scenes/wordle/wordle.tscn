@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dyi0e088ajkcu" path="res://scenes/wordle/TileRow.tscn" id="1_31pkf"]
 [ext_resource type="Script" uid="uid://ctns0lwx178gk" path="res://scripts/wordle/Wordle.gd" id="1_c1jua"]
 [ext_resource type="PackedScene" uid="uid://dvdyixg7op1r8" path="res://scenes/wordle/InvalidWord.tscn" id="3_2o7r0"]
+[ext_resource type="FontFile" uid="uid://cbeyqkgoxg757" path="res://assets/fonts/Lustria/Lustria-Regular.ttf" id="3_33qvv"]
 [ext_resource type="Theme" uid="uid://c8mvie6xf1ng5" path="res://new_theme.tres" id="4_2npy4"]
 
 [node name="Wordle" type="MarginContainer" unique_id=2133393770 node_paths=PackedStringArray("tile_rows")]
@@ -41,6 +42,11 @@ layout_mode = 2
 
 [node name="TileRow5" parent="CenterContainer/VBoxContainer" unique_id=540168278 instance=ExtResource("1_31pkf")]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer" unique_id=2139325148]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_33qvv")
+theme_override_font_sizes/font_size = 32
 
 [node name="InvalidWord" parent="." unique_id=1853379719 instance=ExtResource("3_2o7r0")]
 layout_mode = 2

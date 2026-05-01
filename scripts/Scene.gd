@@ -5,6 +5,7 @@ extends Control
 @export var unskippable: bool
 
 signal scene_completed
+signal scene_failed
 
 func activate():
 	if load_image:

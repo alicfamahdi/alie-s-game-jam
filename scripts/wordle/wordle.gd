@@ -22,6 +22,7 @@ var iw_tween_reference = null
 
 signal scene_completed  
 signal scene_failed
+@onready var notification = $CenterContainer/Label  
 
 func _ready() -> void:
 	target_word = DailyWord.new()
@@ -30,6 +31,19 @@ func _ready() -> void:
 	invalid_word.modulate = Color(1, 1, 1, 0)
 	
 func activate():
+	current_guess = []
+	guess_index = 0
+	success = false
+	time_left = timer_seconds
+	timer.stop()
+	notification.text = ""
+
+	# reset all tiles
+	for row in tile_rows:
+		for tile in row.tiles:
+			tile.label.text = ""
+			tile.reset()  # you'll need a reset() in Tile.gd too
+
 	start_countdown(timer_seconds)
 
 func _process(delta: float) -> void:
@@ -73,13 +87,13 @@ func submit_guess():
 			guess_index += 1
 			if guess_index >= tile_rows.size():
 				timer.stop()
-				scene_failed.emit()
+				show_notification("Let's rewind a bit...", Color("e6842f"))
 				return
 			current_guess = []
 			if (results == { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 }):
 				success = true
 				timer.stop()
-				scene_completed.emit()
+				show_notification("Brilliant!", Color("18814e"))
 				return
 			
 			for i in range(0, 5):
@@ -109,4 +123,16 @@ func update_display():
 	$HBoxContainer/VBoxContainer/Label.text = "%02d:%02d" % [time_left / 60, fmod(time_left, 60)]
 
 func on_time_up():
-	scene_failed.emit()
+	show_notification("Time's up!", Color("b7082c"))
+	
+func show_notification(text: String, color: Color):
+	notification.text = text
+	notification.modulate = color
+	var tween = create_tween()
+	tween.tween_interval(2.0)
+	tween.tween_callback(func():
+		if success:
+			scene_completed.emit()
+		else:
+			scene_failed.emit()
+	)

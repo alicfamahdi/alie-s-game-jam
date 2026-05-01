@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbg1dgqr1lnv3"
-path="res://.godot/imported/ice_meets_fire.jpg-d14989ff669cef3224416a4af1099649.ctex"
+uid="uid://v52phlfqjc4n"
+path="res://.godot/imported/ice_meets_fire.png-abd777f6928bec5d6f9f491e1b43a7db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/ice_meets_fire.jpg"
-dest_files=["res://.godot/imported/ice_meets_fire.jpg-d14989ff669cef3224416a4af1099649.ctex"]
+source_file="res://assets/visuals/ice_meets_fire.png"
+dest_files=["res://.godot/imported/ice_meets_fire.png-abd777f6928bec5d6f9f491e1b43a7db.ctex"]
 
 [params]
 

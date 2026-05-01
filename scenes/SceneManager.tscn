@@ -40,7 +40,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_efx10")
-scenes = Array[NodePath]([NodePath("Scene0"), NodePath("Scene1"), NodePath("Scene2"), NodePath("Scene3"), NodePath("Scene4"), NodePath("Branch0"), NodePath("Scene5"), NodePath("Branch1"), NodePath("Scene6"), NodePath("Branch2")])
+scenes = Array[NodePath]([NodePath("Scene0"), NodePath("Scene1"), NodePath("Scene2"), NodePath("Scene3"), NodePath("Scene4"), NodePath("BranchGame0"), NodePath("Scene5"), NodePath("Branch1"), NodePath("Scene6"), NodePath("Branch2")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1473826282]
 visible = false
@@ -131,17 +131,83 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_54oce")
 text = "The Scientist"
 script = ExtResource("7_r62be")
 
-[node name="Branch0" parent="." unique_id=1558311222 instance=ExtResource("1_g58rr")]
+[node name="BranchGame0" parent="." unique_id=1558311222 instance=ExtResource("1_g58rr")]
 layout_mode = 1
 unskippable = true
 
-[node name="Celestine" parent="Branch0" unique_id=2133393770 instance=ExtResource("7_54oce")]
+[node name="Celestine" parent="BranchGame0" unique_id=2133393770 instance=ExtResource("7_54oce")]
 visible = false
 layout_mode = 1
 daily_word = "BLAZE"
 timer_seconds = 300.0
 
-[node name="Twyla" parent="Branch0" unique_id=188165486 instance=ExtResource("8_5s22t")]
+[node name="Twyla" parent="BranchGame0" unique_id=188165486 instance=ExtResource("8_5s22t")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="BranchGame1" parent="." unique_id=1581362047 instance=ExtResource("1_g58rr")]
+layout_mode = 1
+unskippable = true
+
+[node name="Celestine" parent="BranchGame1" unique_id=898471916 instance=ExtResource("7_54oce")]
+visible = false
+layout_mode = 1
+daily_word = "HALOS"
+timer_seconds = 180.0
+
+[node name="Twyla" parent="BranchGame1" unique_id=1749032283 instance=ExtResource("8_5s22t")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="BranchGame2" parent="." unique_id=1563919710 instance=ExtResource("1_g58rr")]
+layout_mode = 1
+unskippable = true
+
+[node name="Celestine" parent="BranchGame2" unique_id=1509024950 instance=ExtResource("7_54oce")]
+visible = false
+layout_mode = 1
+daily_word = "GLYPH"
+timer_seconds = 120.0
+
+[node name="Twyla" parent="BranchGame2" unique_id=999112109 instance=ExtResource("8_5s22t")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="BranchGame3" parent="." unique_id=2024930277 instance=ExtResource("1_g58rr")]
+layout_mode = 1
+unskippable = true
+
+[node name="Celestine" parent="BranchGame3" unique_id=1054522605 instance=ExtResource("7_54oce")]
+visible = false
+layout_mode = 1
+daily_word = "PARSE"
+timer_seconds = 120.0
+
+[node name="Twyla" parent="BranchGame3" unique_id=1910656345 instance=ExtResource("8_5s22t")]
 visible = false
 layout_mode = 0
 anchors_preset = 0
@@ -160,30 +226,12 @@ load_image = "ice_meets_fire"
 
 [node name="Branch1" parent="." unique_id=416128067 instance=ExtResource("1_g58rr")]
 layout_mode = 1
-unskippable = true
 
-[node name="Celestine" parent="Branch1" unique_id=2072289234 instance=ExtResource("7_54oce")]
-visible = false
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-daily_word = "BLAZE"
-timer_seconds = 300.0
+[node name="Celestine" parent="Branch1" unique_id=1097916411 instance=ExtResource("1_g58rr")]
+layout_mode = 1
 
-[node name="Twyla" parent="Branch1" unique_id=228869801 instance=ExtResource("8_5s22t")]
-visible = false
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_right = 960.0
-offset_bottom = 540.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="Twyla" parent="Branch1" unique_id=563232052 instance=ExtResource("1_g58rr")]
+layout_mode = 1
 
 [node name="Scene6" parent="." unique_id=1150729561 instance=ExtResource("1_g58rr")]
 visible = false
@@ -192,30 +240,26 @@ load_image = "ground_cracks"
 
 [node name="Branch2" parent="." unique_id=1138366350 instance=ExtResource("1_g58rr")]
 layout_mode = 1
-unskippable = true
 
-[node name="Celestine" parent="Branch2" unique_id=1326428574 instance=ExtResource("7_54oce")]
-visible = false
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-daily_word = "BLAZE"
-timer_seconds = 300.0
+[node name="Celestine" parent="Branch2" unique_id=1285829876 instance=ExtResource("1_g58rr")]
+layout_mode = 1
 
-[node name="Twyla" parent="Branch2" unique_id=265550438 instance=ExtResource("8_5s22t")]
+[node name="Twyla" parent="Branch2" unique_id=1687980963 instance=ExtResource("1_g58rr")]
+layout_mode = 1
+
+[node name="Scene7" parent="." unique_id=2052809540 instance=ExtResource("1_g58rr")]
 visible = false
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_right = 960.0
-offset_bottom = 540.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 1
+load_image = "ground_cracks"
+
+[node name="Branch3" parent="." unique_id=787568340 instance=ExtResource("1_g58rr")]
+layout_mode = 1
+
+[node name="Celestine" parent="Branch3" unique_id=1105351867 instance=ExtResource("1_g58rr")]
+layout_mode = 1
+
+[node name="Twyla" parent="Branch3" unique_id=293054053 instance=ExtResource("1_g58rr")]
+layout_mode = 1
 
 [connection signal="pressed" from="Scene4/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/CelestineButton" to="Scene4/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/CelestineButton" method="_on_pressed"]
 [connection signal="pressed" from="Scene4/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/TwylaButton" to="Scene4/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/TwylaButton" method="_on_pressed"]
