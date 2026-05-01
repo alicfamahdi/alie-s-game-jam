@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://edry436mfw8t"]
 
-[ext_resource type="Script" uid="uid://b028gni2i48l5" path="res://scripts/conductor/conductor.gd" id="1_truxm"]
+[ext_resource type="Script" uid="uid://b028gni2i48l5" path="res://scripts/conductor/Conductor.gd" id="1_truxm"]
 
 [node name="Conductor" type="AudioStreamPlayer" unique_id=2016593879]
 script = ExtResource("1_truxm")

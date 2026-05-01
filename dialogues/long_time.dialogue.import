@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cpo6f388eh1qn"
+path="res://.godot/imported/long_time.dialogue-14bd1c8b4adbe60f24cb3585b9d78da6.tres"
+
+[deps]
+
+source_file="res://dialogues/long_time.dialogue"
+dest_files=["res://.godot/imported/long_time.dialogue-14bd1c8b4adbe60f24cb3585b9d78da6.tres"]
+
+[params]
+
+defaults=true

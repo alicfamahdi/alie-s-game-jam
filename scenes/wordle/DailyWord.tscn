@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dlt3g2vgf0hhf"]
+
+[ext_resource type="Script" uid="uid://pudt7p4iiy0n" path="res://scripts/wordle/DailyWord.gd" id="1_agril"]
+
+[node name="DailyWord" type="Node" unique_id=1345513637]
+script = ExtResource("1_agril")

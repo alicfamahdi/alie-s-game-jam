@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://brmlii6c7a2o4"]
 
-[ext_resource type="Script" uid="uid://cn6a4s6hg3yl7" path="res://scripts/conductor/note.gd" id="1_gndo6"]
-[ext_resource type="Texture2D" uid="uid://h70kjq06k4hk" path="res://assets/visuals/conductor/arrow_button/arrow-left-fall.png" id="2_d3khl"]
-[ext_resource type="Texture2D" uid="uid://dltc5aupi3g0x" path="res://assets/visuals/conductor/arrow_button/arrow-up-fall.png" id="3_p6vvk"]
-[ext_resource type="Texture2D" uid="uid://c6uon40kncvpx" path="res://assets/visuals/conductor/arrow_button/arrow-right-fall.png" id="4_w848e"]
+[ext_resource type="Script" uid="uid://cn6a4s6hg3yl7" path="res://scripts/conductor/Note.gd" id="1_gndo6"]
+[ext_resource type="Texture2D" uid="uid://h70kjq06k4hk" path="res://assets/visuals/conductor/arrow_button/arrow_left_fall.png" id="2_d3khl"]
+[ext_resource type="Texture2D" uid="uid://dltc5aupi3g0x" path="res://assets/visuals/conductor/arrow_button/arrow_up_fall.png" id="3_p6vvk"]
+[ext_resource type="Texture2D" uid="uid://c6uon40kncvpx" path="res://assets/visuals/conductor/arrow_button/arrow_right_fall.png" id="4_w848e"]
+[ext_resource type="Theme" uid="uid://c8mvie6xf1ng5" path="res://new_theme.tres" id="5_p6vvk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_11p6w"]
 animations = [{
@@ -54,6 +55,8 @@ one_shot = true
 [node name="Label" type="Label" parent="Node2D" unique_id=558326037]
 anchors_preset = -1
 anchor_right = 0.046
+theme = ExtResource("5_p6vvk")
+theme_type_variation = &"RhythmIndicator"
 horizontal_alignment = 1
 vertical_alignment = 1
 

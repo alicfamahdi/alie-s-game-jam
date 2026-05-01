@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://davx4y2dwfglv"]
 
-[ext_resource type="PackedScene" uid="uid://dyi0e088ajkcu" path="res://scenes/wordle/tile_row.tscn" id="1_31pkf"]
-[ext_resource type="Script" uid="uid://ctns0lwx178gk" path="res://scripts/wordle/wordle.gd" id="1_c1jua"]
-[ext_resource type="PackedScene" uid="uid://dvdyixg7op1r8" path="res://scenes/wordle/invalid_word.tscn" id="3_2o7r0"]
+[ext_resource type="PackedScene" uid="uid://dyi0e088ajkcu" path="res://scenes/wordle/TileRow.tscn" id="1_31pkf"]
+[ext_resource type="Script" uid="uid://ctns0lwx178gk" path="res://scripts/wordle/Wordle.gd" id="1_c1jua"]
+[ext_resource type="PackedScene" uid="uid://dvdyixg7op1r8" path="res://scenes/wordle/InvalidWord.tscn" id="3_2o7r0"]
+[ext_resource type="Theme" uid="uid://c8mvie6xf1ng5" path="res://new_theme.tres" id="4_2npy4"]
 
 [node name="Wordle" type="MarginContainer" unique_id=2133393770 node_paths=PackedStringArray("tile_rows")]
 anchors_preset = 15
@@ -11,7 +12,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c1jua")
-daily_word = "WORLD"
 tile_rows = [NodePath("CenterContainer/VBoxContainer/TileRow0"), NodePath("CenterContainer/VBoxContainer/TileRow1"), NodePath("CenterContainer/VBoxContainer/TileRow2"), NodePath("CenterContainer/VBoxContainer/TileRow3"), NodePath("CenterContainer/VBoxContainer/TileRow4"), NodePath("CenterContainer/VBoxContainer/TileRow5")]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1114240348]
@@ -39,9 +39,21 @@ layout_mode = 2
 [node name="TileRow4" parent="CenterContainer/VBoxContainer" unique_id=941135358 instance=ExtResource("1_31pkf")]
 layout_mode = 2
 
-[node name="TileRow5" parent="CenterContainer/VBoxContainer" unique_id=540168278 node_paths=PackedStringArray("tiles") instance=ExtResource("1_31pkf")]
+[node name="TileRow5" parent="CenterContainer/VBoxContainer" unique_id=540168278 instance=ExtResource("1_31pkf")]
 layout_mode = 2
-tiles = [NodePath("Tile0"), NodePath("Tile2"), NodePath("Tile3"), NodePath("Tile4"), null]
 
 [node name="InvalidWord" parent="." unique_id=1853379719 instance=ExtResource("3_2o7r0")]
 layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1996313264]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1739201348]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=868992212]
+layout_mode = 2
+theme = ExtResource("4_2npy4")
+theme_type_variation = &"TileLetter"
+
+[node name="Timer" type="Timer" parent="." unique_id=878871034]

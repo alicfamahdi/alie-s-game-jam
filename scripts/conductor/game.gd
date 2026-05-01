@@ -1,4 +1,10 @@
-extends Node2D
+extends MarginContainer
+
+@export var piece_file: String
+@export var bpm := 100
+@export var measures := 4
+
+signal scene_completed
 
 var score = 0
 var combo = 0
@@ -8,8 +14,6 @@ var great = 0
 var good = 0
 var okay = 0
 var missed = 0
-
-var bpm = 115
 
 var song_position = 0.0
 var song_position_in_beats = 0
@@ -26,9 +30,16 @@ var rand = 0
 var note = load("res://scenes/conductor/Note.tscn")
 var instance
 
+#func _ready() -> void:
+	#activate()
 
-func _ready():
+func activate():
 	randomize()
+	$Conductor.bpm = bpm
+	$Conductor.measures = measures
+	$Conductor.sec_per_beat = 60.0 / bpm
+	$Conductor.stream = load("res://assets/audios/" + piece_file + ".ogg")
+	$Conductor.set_physics_process(true)
 	$Conductor.play_with_beat_offset(8)
 
 
@@ -106,16 +117,14 @@ func _on_Conductor_beat(position):
 		spawn_3_beat = 0
 		spawn_4_beat = 0
 	if song_position_in_beats > 404:
+		scene_completed.emit()
 		Global.set_score(score)
 		Global.combo = max_combo
 		Global.great = great
 		Global.good = good
 		Global.okay = okay
 		Global.missed = missed
-		if get_tree().change_scene_to_file("res://scenes/conductor/End.tscn") != OK:
-			print ("Error changing scene to End")
-
-
+		
 
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
@@ -131,14 +140,11 @@ func _spawn_notes(to_spawn):
 		instance.initialize(lane)
 		add_child(instance)
 		
-
-
 func increment_score(by):
 	if by > 0:
 		combo += 1
 	else:
 		combo = 0
-	
 	if by == 3:
 		great += 1
 	elif by == 2:
@@ -148,17 +154,15 @@ func increment_score(by):
 	else:
 		missed += 1
 	
-	
 	score += by * combo
-	$Label.text = str(score)
+	$VBoxContainer/Label.text = str(score)
 	if combo > 0:
-		$Combo.text = str(combo) + " combo!"
+		$VBoxContainer/Combo.text = str(combo) + " combo!"
 		if combo > max_combo:
 			max_combo = combo
 	else:
-		$Combo.text = ""
-
+		$VBoxContainer/Combo.text = ""
 
 func reset_combo():
 	combo = 0
-	$Combo.text = ""
+	$VBoxContainer/Combo.text = ""
