@@ -48,6 +48,9 @@ func activate():
 
 func _process(delta: float) -> void:
 	update_display()
+	if success:
+		show_notification("Brilliant!", Color("18814e"))
+
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed():
@@ -93,8 +96,6 @@ func submit_guess():
 			if (results == { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 }):
 				success = true
 				timer.stop()
-				show_notification("Brilliant!", Color("18814e"))
-				return
 			
 			for i in range(0, 5):
 				current_tiles[i].submit(results[i])

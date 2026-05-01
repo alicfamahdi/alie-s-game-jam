@@ -15,3 +15,6 @@ func activate():
 			preload("res://addons/dialogue_manager/example_balloon/example_balloon.tscn"),
 			load("res://dialogues/" + load_dialogue + ".dialogue"),
 			"start")
+
+func go_to_menu():
+	get_tree().change_scene_to_file("res://scenes/StartMenu.tscn")

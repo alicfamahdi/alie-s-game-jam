@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://l4nj2aiy22vi"
+path="res://.godot/imported/next_day.dialogue-d325a8e563e6b20f04762130d9b35acb.tres"
+
+[deps]
+
+source_file="res://dialogues/next_day.dialogue"
+dest_files=["res://.godot/imported/next_day.dialogue-d325a8e563e6b20f04762130d9b35acb.tres"]
+
+[params]
+
+defaults=true

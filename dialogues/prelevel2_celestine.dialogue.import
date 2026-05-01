@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://csyvfhhtkh01t"
+path="res://.godot/imported/prelevel2_celestine.dialogue-c508bc0d231e49eae662df4b5f9d09f2.tres"
+
+[deps]
+
+source_file="res://dialogues/prelevel2_celestine.dialogue"
+dest_files=["res://.godot/imported/prelevel2_celestine.dialogue-c508bc0d231e49eae662df4b5f9d09f2.tres"]
+
+[params]
+
+defaults=true

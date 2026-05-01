@@ -69,7 +69,7 @@ escape={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/long_time.dialogue", "res://dialogues/opening_scene.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/long_time.dialogue", "res://dialogues/opening_scene.dialogue", "res://dialogues/next_day.dialogue", "res://dialogues/what_twyla.dialogue", "res://dialogues/what_celestine.dialogue", "res://dialogues/prelevel1_celestine.dialogue", "res://dialogues/prelevel2_celestine.dialogue", "res://dialogues/prelevel3_celestine.dialogue", "res://dialogues/precollab_celestine.dialogue", "res://dialogues/to_be_continued.dialogue")
 
 [physics]
 

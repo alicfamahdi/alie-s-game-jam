@@ -14,7 +14,7 @@ func _ready() -> void:
 func _unhandled_input(event):
 	var current_scene = get_node(scenes[current_index])
 	var active = get_active_scene(current_scene)
-	if Input.is_action_pressed("ui_accept") and not current_scene.unskippable:			
+	if Input.is_action_pressed("ui_accept") and not dialogue_active and not active.unskippable:			
 		next_scene()
 
 func get_active_scene(node: Node) -> Node:
@@ -30,7 +30,6 @@ func _on_dialogue_started(_resource):
 
 func _on_dialogue_ended(_resource):
 	dialogue_active = false
-	next_scene()
 
 func next_scene():
 	get_node(scenes[current_index]).visible = false
@@ -51,14 +50,14 @@ func activate_scene(node: Node):
 		character_scene.visible = true
 		character_scene.activate()
 		if character_scene.has_signal("scene_completed"):
-			character_scene.scene_completed.connect(_on_scene_completed)
+			character_scene.scene_completed.connect(_on_scene_completed, CONNECT_ONE_SHOT)
 		if character_scene.has_signal("scene_failed"):
 			character_scene.scene_failed.connect(_on_scene_failed, CONNECT_ONE_SHOT)	
 	else:
 		node.visible = true
 		node.activate()
 		if node.has_signal("scene_completed"):
-			node.scene_completed.connect(_on_scene_completed)
+			node.scene_completed.connect(_on_scene_completed, CONNECT_ONE_SHOT)
 		if node.has_signal("scene_failed"):
 			node.scene_failed.connect(_on_scene_failed, CONNECT_ONE_SHOT)
 

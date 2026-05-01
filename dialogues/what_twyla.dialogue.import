@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://daryeupb1dqkr"
+path="res://.godot/imported/what_twyla.dialogue-8de81f5a67e6f57c6ff4bd6c33d5b928.tres"
+
+[deps]
+
+source_file="res://dialogues/what_twyla.dialogue"
+dest_files=["res://.godot/imported/what_twyla.dialogue-8de81f5a67e6f57c6ff4bd6c33d5b928.tres"]
+
+[params]
+
+defaults=true
