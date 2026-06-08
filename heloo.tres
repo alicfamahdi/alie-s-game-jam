@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DailyWord" format=3 uid="uid://d1aqrd6tdqygv"]
+
+[ext_resource type="Script" uid="uid://pudt7p4iiy0n" path="res://scripts/daily_word.gd" id="1_1vtgs"]
+
+[resource]
+script = ExtResource("1_1vtgs")
+metadata/_custom_type_script = "uid://pudt7p4iiy0n"

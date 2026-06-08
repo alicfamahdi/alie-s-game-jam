@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cf1q28ojqk18b"]
+
+[ext_resource type="Script" uid="uid://ddyxhy4njie7p" path="res://scripts/SceneManager.gd" id="1_7epfh"]
+
+[node name="TwylaSceneManager" type="Control" unique_id=477636623]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7epfh")
+scenes = Array[NodePath]([NodePath("")])

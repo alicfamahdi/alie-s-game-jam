@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d1xa42m72fcot"]
+
+[ext_resource type="Script" uid="uid://ddyxhy4njie7p" path="res://scripts/SceneManager.gd" id="1_4q7bt"]
+[ext_resource type="PackedScene" uid="uid://davx4y2dwfglv" path="res://scenes/wordle/Wordle.tscn" id="2_whlx5"]
+
+[node name="CelestineSceneManager" type="Control" unique_id=278617423]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4q7bt")
+scenes = Array[NodePath]([NodePath("Wordle0")])
+
+[node name="Wordle0" parent="." unique_id=2133393770 instance=ExtResource("2_whlx5")]
+visible = false
+layout_mode = 1
+daily_word = "BLAZE"
+timer_seconds = 300.0
