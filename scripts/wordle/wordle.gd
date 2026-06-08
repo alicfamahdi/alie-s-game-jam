@@ -24,12 +24,16 @@ signal scene_completed
 signal scene_failed
 @onready var notification = $CenterContainer/Label  
 
+@onready var keyboard = $CenterContainer/HBoxContainer/SubViewportContainer/SubViewport/Keyboard
+
+# then reposition since scale shifts the anchor point
+
 func _ready() -> void:
 	target_word = DailyWord.new()
 	target_word.daily_word = daily_word
 	add_child(target_word)
 	invalid_word.modulate = Color(1, 1, 1, 0)
-	
+
 func activate():
 	current_guess = []
 	guess_index = 0
@@ -37,6 +41,7 @@ func activate():
 	time_left = timer_seconds
 	timer.stop()
 	notification.text = ""
+	keyboard.reset_keys()
 
 	# reset all tiles
 	for row in tile_rows:
@@ -92,13 +97,16 @@ func submit_guess():
 				timer.stop()
 				show_notification("Let's rewind a bit...", Color("e6842f"))
 				return
+			var submitted_guess = current_guess.duplicate()
 			current_guess = []
+				
 			if (results == { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 }):
 				success = true
 				timer.stop()
 			
 			for i in range(0, 5):
 				current_tiles[i].submit(results[i])
+				keyboard.update_key(submitted_guess[i], results[i])
 
 func handle_erase_input(key: String):
 	if !success:

@@ -21,8 +21,8 @@ label = NodePath("Label")
 [node name="Label" type="Label" parent="Tile0" unique_id=492004971]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 20.0
+offset_right = 64.0
+offset_bottom = 64.0
 theme = ExtResource("1_471jp")
 theme_type_variation = &"TileLetter"
 horizontal_alignment = 1

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dvdyixg7op1r8" path="res://scenes/wordle/InvalidWord.tscn" id="3_2o7r0"]
 [ext_resource type="FontFile" uid="uid://cbeyqkgoxg757" path="res://assets/fonts/Lustria/Lustria-Regular.ttf" id="3_33qvv"]
 [ext_resource type="Theme" uid="uid://c8mvie6xf1ng5" path="res://new_theme.tres" id="4_2npy4"]
+[ext_resource type="PackedScene" uid="uid://cu3a08jw1km5f" path="res://scenes/keyboard.tscn" id="6_8vrpk"]
 
 [node name="Wordle" type="MarginContainer" unique_id=2133393770 node_paths=PackedStringArray("tile_rows")]
 anchors_preset = 15
@@ -13,7 +14,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c1jua")
-tile_rows = [NodePath("CenterContainer/VBoxContainer/TileRow0"), NodePath("CenterContainer/VBoxContainer/TileRow1"), NodePath("CenterContainer/VBoxContainer/TileRow2"), NodePath("CenterContainer/VBoxContainer/TileRow3"), NodePath("CenterContainer/VBoxContainer/TileRow4"), NodePath("CenterContainer/VBoxContainer/TileRow5")]
+daily_word = "WORLD"
+tile_rows = [NodePath("CenterContainer/HBoxContainer/VBoxContainer/TileRow0"), NodePath("CenterContainer/HBoxContainer/VBoxContainer/TileRow1"), NodePath("CenterContainer/HBoxContainer/VBoxContainer/TileRow2"), NodePath("CenterContainer/HBoxContainer/VBoxContainer/TileRow3"), NodePath("CenterContainer/HBoxContainer/VBoxContainer/TileRow4"), NodePath("CenterContainer/HBoxContainer/VBoxContainer/TileRow5")]
+timer_seconds = 60.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1114240348]
 layout_mode = 2
@@ -22,44 +25,66 @@ color = Color(0.13725491, 0.11372549, 0.11764706, 1)
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=207402561]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1966299400]
-layout_mode = 2
-
-[node name="TileRow0" parent="CenterContainer/VBoxContainer" unique_id=335293870 instance=ExtResource("1_31pkf")]
-layout_mode = 2
-
-[node name="TileRow1" parent="CenterContainer/VBoxContainer" unique_id=2015642602 instance=ExtResource("1_31pkf")]
-layout_mode = 2
-
-[node name="TileRow2" parent="CenterContainer/VBoxContainer" unique_id=794766976 instance=ExtResource("1_31pkf")]
-layout_mode = 2
-
-[node name="TileRow3" parent="CenterContainer/VBoxContainer" unique_id=143094012 instance=ExtResource("1_31pkf")]
-layout_mode = 2
-
-[node name="TileRow4" parent="CenterContainer/VBoxContainer" unique_id=941135358 instance=ExtResource("1_31pkf")]
-layout_mode = 2
-
-[node name="TileRow5" parent="CenterContainer/VBoxContainer" unique_id=540168278 instance=ExtResource("1_31pkf")]
-layout_mode = 2
-
 [node name="Label" type="Label" parent="CenterContainer" unique_id=2139325148]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_33qvv")
 theme_override_font_sizes/font_size = 32
 
+[node name="HBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1230667557]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer" unique_id=1966299400]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="TileRow0" parent="CenterContainer/HBoxContainer/VBoxContainer" unique_id=335293870 instance=ExtResource("1_31pkf")]
+layout_mode = 2
+
+[node name="TileRow1" parent="CenterContainer/HBoxContainer/VBoxContainer" unique_id=2015642602 instance=ExtResource("1_31pkf")]
+layout_mode = 2
+
+[node name="TileRow2" parent="CenterContainer/HBoxContainer/VBoxContainer" unique_id=794766976 instance=ExtResource("1_31pkf")]
+layout_mode = 2
+
+[node name="TileRow3" parent="CenterContainer/HBoxContainer/VBoxContainer" unique_id=143094012 instance=ExtResource("1_31pkf")]
+layout_mode = 2
+
+[node name="TileRow4" parent="CenterContainer/HBoxContainer/VBoxContainer" unique_id=941135358 instance=ExtResource("1_31pkf")]
+layout_mode = 2
+
+[node name="TileRow5" parent="CenterContainer/HBoxContainer/VBoxContainer" unique_id=540168278 instance=ExtResource("1_31pkf")]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CenterContainer/HBoxContainer" unique_id=1419303521]
+custom_minimum_size = Vector2(338, 100)
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CenterContainer/HBoxContainer/SubViewportContainer" unique_id=510699518]
+handle_input_locally = false
+size = Vector2i(340, 100)
+size_2d_override = Vector2i(676, 200)
+render_target_update_mode = 4
+
+[node name="Keyboard" parent="CenterContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1964880384 instance=ExtResource("6_8vrpk")]
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
 [node name="InvalidWord" parent="." unique_id=1853379719 instance=ExtResource("3_2o7r0")]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1996313264]
+[node name="Timer" type="Timer" parent="." unique_id=878871034]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1074506813]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1739201348]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=526121440]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=868992212]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=326241333]
 layout_mode = 2
 theme = ExtResource("4_2npy4")
 theme_type_variation = &"TileLetter"
-
-[node name="Timer" type="Timer" parent="." unique_id=878871034]
